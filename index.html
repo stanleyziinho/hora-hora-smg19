@@ -1,125 +1,621 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#242e79"><title>SMG19 | Hora a Hora V6</title><style>
-:root{--navy:#252e73;--blue:#3154e9;--line:#e4e8f1;--ink:#222b53;--muted:#8992ab;--bg:#f1f3f9;--green:#1cc562;--red:#eb3f5b;--orange:#ff822e}*{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--bg);font:12px Inter,system-ui,-apple-system,'Segoe UI',Arial,sans-serif}button,input,select{font:inherit}button{cursor:pointer}.shell{max-width:1900px;margin:auto;padding:12px 14px 30px}.topline{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}.brand{display:flex;align-items:center;gap:9px;font-weight:900;font-size:16px;color:var(--navy)}.mark{background:#ffe600;padding:8px 11px;border-radius:11px;color:#273075}.brand small{display:block;font-size:10px;color:#78829d;font-weight:700}.topactions{display:flex;align-items:center;gap:7px;flex-wrap:wrap}.pill{border:1px solid #dfe3ed;border-radius:12px;background:white;padding:8px 11px;font-weight:750;color:var(--navy)}.pill.active{background:#ffe600;border-color:#ffe600}.inputs{display:grid;grid-template-columns:repeat(4,minmax(115px,1fr)) repeat(3,minmax(145px,1.35fr)) auto;gap:9px;align-items:stretch;margin-bottom:8px}.field{border:1px solid #e7eaf3;background:white;box-shadow:0 3px 14px #23305a08;border-radius:12px;padding:6px 10px;min-width:0}.field label{font-size:10px;color:#8d96ad;display:block;margin-bottom:3px}.field input,.field select{background:transparent;border:0;outline:0;width:100%;color:#20274d;font-weight:800;font-size:14px;min-width:0}.status{display:grid;place-items:center;background:var(--navy);border-radius:30px;color:#ffed53;font-weight:800;padding:5px 14px;text-align:center;white-space:nowrap}.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:12px}.kpi{position:relative;overflow:hidden;border-radius:16px;padding:12px 15px;min-height:94px;color:white;box-shadow:0 4px 18px #27304a16}.kpi:after{content:"";position:absolute;width:115px;height:115px;right:15px;top:-27px;border:15px solid #ffffff14;border-radius:100%}.kpi.purple{background:linear-gradient(110deg,#262d82,#3b64f7)}.kpi.yellow{background:linear-gradient(120deg,#f7c000,#ffeb69);color:#242c5a}.kpi.cyan{background:linear-gradient(110deg,#076785,#2ac5d8)}.kpi.emerald{background:linear-gradient(110deg,#087657,#3bcf9a)}.kpi small{font-size:11px;opacity:.8;display:block}.kpi .big{font-size:29px;line-height:1.1;font-weight:900;letter-spacing:-.7px}.kpi .sub{font-size:11px;opacity:.87;margin-top:5px}.tag{display:inline-block;font-size:11px;padding:2px 7px;border-radius:999px;background:#ffffffde;color:#108c4c;font-weight:800}.tag.bad{color:#d13a50}.kpi .icon{position:absolute;right:14px;top:15px;font-size:27px;opacity:.8}.grid{display:grid;grid-template-columns:1.6fr 1fr;gap:12px;margin-bottom:12px}.panel{background:white;border:1px solid #e4e8f1;border-radius:16px;padding:13px 14px;box-shadow:0 4px 12px #27304a08;min-width:0}.panel-title{font-weight:850;font-size:13px;display:flex;align-items:center;gap:7px;margin-bottom:10px}.panel-title .ico{font-size:17px;background:#fff5be;border-radius:8px;padding:4px}.panel-title small{color:#8f97ab;font-weight:500;font-size:11px}.panel-head{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}.legend{font-size:10px;color:#8c93a6}.legend b{color:#1ac463}.tablewrap{overflow:auto;width:100%;border:1px solid #e4e9f1;border-radius:11px}.data{width:100%;border-collapse:collapse;table-layout:fixed;min-width:570px}.data thead{background:#252d6d;color:white}.data th{padding:8px 6px;font-size:10px;text-align:center}.data th:first-child,.data td:first-child{text-align:left;padding-left:10px;width:23%}.data td{border-bottom:1px solid #eef0f5;padding:5px 6px;text-align:center;font-weight:650}.data tbody tr:last-child td{border-bottom:0}.data input{font-size:12px;width:100%;max-width:77px;min-width:34px;text-align:center;border:0;background:transparent;font-weight:750;color:#232b52;padding:2px 0;outline:0}.data input:focus{background:#fff3c4;box-shadow:inset 0 0 0 1px #f5c400;border-radius:5px}.data .sum td{background:#eaf0ff;font-weight:900;border-top:2px solid #2d357b}.data .plan td{background:#fff9d8;color:#957400;font-weight:800}.data .pos{color:#13a659}.data .neg{color:#e7465c}.data .section td{background:#f7f8fc;color:#242c65;font-weight:900;text-align:left;border-bottom:1px solid #e7e9ef}.data .section td:first-child{width:auto}.data .share{color:#169a64}.muted{color:#9199ad}.chart{width:100%;height:285px;display:block}.chartbox{margin-top:2px}.chart svg{width:100%;height:100%}.sortcontent{display:grid;grid-template-columns:30% 70%;gap:10px}.ringbox{background:#fafbff;border:1px solid #ebedf3;border-radius:12px;padding:13px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:10px}.ring{height:128px;width:128px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--green) 0deg,var(--green) var(--angle),#e8ecf3 var(--angle));position:relative}.ring:after{content:"";position:absolute;inset:11px;background:white;border-radius:50%}.ring strong{position:relative;z-index:1;font-size:22px}.ringbox small{color:#8b93a7}.ringstats{display:grid;grid-template-columns:1fr 1fr;gap:10px;width:100%;text-align:center}.ringstats b{font-size:15px;display:block}.hc{display:flex;align-items:stretch;gap:8px}.hcTitle{min-width:118px;padding:12px 5px;font-size:14px;font-weight:900}.hcgrid{display:grid;grid-template-columns:repeat(11,minmax(0,1fr));gap:7px;flex:1}.mini{padding:8px 9px;background:#f8f9fd;border:1px solid #e9ecf3;border-radius:12px;min-width:0}.mini span{color:#959cb0;font-size:10px;display:block}.mini strong{font-size:18px;line-height:1.15}.mini.emph{background:#fffbe2;border-color:#fff0a5}.mini.emph strong{color:#0c9b62}.mini.alert strong{color:#e53b56}.hover-card{transition:transform .25s cubic-bezier(.2,.75,.2,1),box-shadow .25s,border-color .25s;transform-origin:center;position:relative}.hover-card:hover,.hover-card:focus-within{transform:translateY(-5px) scale(1.014);box-shadow:0 18px 32px #202d5d25;z-index:3;border-color:#b4c1ef}.hover-card:active{transform:scale(1.008)}.foot{font-size:10px;color:#8c95aa;margin-top:12px;text-align:center}.empty{color:#8991a8;padding:18px;text-align:center}.actions{display:flex;gap:7px;flex-wrap:wrap}.actions button{border:1px solid #e0e5ef;background:#fff;padding:8px 11px;border-radius:10px;color:#273274;font-weight:800}.actions button:hover{background:#fff4b9}@media(max-width:1150px){.inputs{grid-template-columns:repeat(4,1fr)}.status{grid-column:span 4}.grid{grid-template-columns:1fr}.hcgrid{grid-template-columns:repeat(4,1fr)}.hc{display:block}.kpis{grid-template-columns:repeat(2,1fr)}}@media(max-width:600px){.shell{padding:8px}.topline{align-items:flex-start}.brand{font-size:13px}.topactions{justify-content:flex-end}.pill{font-size:10px;padding:7px}.inputs{grid-template-columns:repeat(2,1fr)}.status{grid-column:span 2}.kpis{gap:7px}.kpi{padding:10px;min-height:100px}.kpi .big{font-size:22px}.kpi .icon{font-size:18px}.panel{padding:10px}.sortcontent{grid-template-columns:1fr}.chart{height:220px}.hcgrid{grid-template-columns:repeat(2,1fr)}}@media(prefers-reduced-motion:reduce){.hover-card{transition:none}}@media print{body{background:white}.actions,.topactions{display:none}.hover-card{box-shadow:none!important;transform:none!important}.shell{padding:0}.chart{height:240px}}
 
-/* SMG19: campos operacionais alinhados &#224; grade do Hora-Hora original */
-.data .name-cell{display:flex;align-items:center;gap:5px;min-width:0}
-.data .name-cell .name-edit{font-weight:750;color:#253071;background:none;border:0;padding:4px 1px;text-align:left;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:pointer}
-.data .name-cell .name-edit:hover{color:#2069e8;text-decoration:underline}
-.data .name-cell .tiny{background:#f0f3fc;color:#4652a0;border:0;border-radius:5px;padding:3px 6px;font-size:10px;flex-shrink:0}
-.data input[type=number]{background:#f6f8fc;border:1px solid #e8ecf5;border-radius:5px;min-height:25px}
-.data input[type=number]:focus{background:#fff8d4;border-color:#e7c948}
-.obs-table{table-layout:auto;min-width:700px}
-.obs-table th:first-child,.obs-table td:first-child{width:145px}
-.obs-table th:nth-child(2){width:150px}
-.obs-table th:nth-child(3){width:36%}
-.obs-table th:nth-child(4){width:36%}
-.obs-table input,.obs-table select{border:1px solid #e2e6ef;border-radius:7px;background:#f9faff;padding:6px 7px;min-height:30px;width:100%;font-size:11px;color:#253071}
-.obs-table input[type=text]{max-width:none;text-align:left}
-.obs-table td{text-align:left}
-.obs-table td:first-child{font-weight:800}
-.obs-table .del{border:0;background:#ffe9eb;color:#b82f41;border-radius:7px;padding:6px 9px}
-.observations{margin-bottom:12px}
-.hover-card:hover{transform:translateY(-4px) scale(1.009)}
-@media print {.observations{break-inside:avoid}.obs-table input,.obs-table select{background:white;border:none}}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#242b70">
+<title>SMG19 | Hora a Hora V7.1</title>
+<style>
+:root{
+--navy:#252d70;--blue:#3156ec;--bg:#f0f2f8;
+--green:#1fc463;--orange:#f77d2c;--red:#ed4259;
+--ink:#20294e;--muted:#8891a8;--line:#e4e8f2;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:13px Arial,system-ui,sans-serif}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+.shell{max-width:1700px;margin:auto;padding:12px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{background:#ffe600;color:#253075;padding:15px;border-radius:15px;font-weight:900;font-size:20px}
+.brand h1{font-size:21px;margin:0;font-weight:900}
+.brand small{color:#818aa5;font-size:11px}
+.tabs,.actions{display:flex;gap:7px;flex-wrap:wrap}
+button{border:1px solid #dce2ef;background:#fff;color:var(--navy);font-weight:800;border-radius:10px;padding:9px 12px}
+button:hover{background:#fff6c2}
+button.active,.yellow{background:#ffe600;border-color:#ffe600}
+.controls{display:grid;grid-template-columns:repeat(7,minmax(115px,1fr));gap:9px;margin-bottom:11px}
+.field{background:#fff;border:1px solid var(--line);border-radius:12px;padding:9px;min-width:0}
+.field label{display:block;color:var(--muted);font-size:11px;margin-bottom:5px}
+.field input,.field select{width:100%;border:0;outline:0;background:transparent;font-weight:900;font-size:14px;color:var(--navy);min-width:0}
+.status{background:var(--navy);color:#ffe600;border-radius:12px;text-align:center;padding:10px;font-weight:900;margin-bottom:12px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin-bottom:12px}
+.kpi{border-radius:16px;min-height:108px;padding:14px 16px;position:relative;overflow:hidden}
+.kpi:after{content:"";position:absolute;border:15px solid #ffffff18;width:105px;height:105px;right:12px;top:-22px;border-radius:100%}
+.kpi.blue{background:linear-gradient(120deg,#252e89,#4669f6);color:#fff}
+.kpi.yellowCard{background:linear-gradient(120deg,#ffd000,#ffeb71);color:#253064}
+.kpi.cyan{background:linear-gradient(120deg,#086983,#2dc1d5);color:#fff}
+.kpi.green{background:linear-gradient(120deg,#08765a,#35c99b);color:#fff}
+.kpi .title{font-size:13px}
+.kpi strong{display:block;font-size:32px;line-height:1.3}
+.kpi small{display:block;font-weight:750;margin-top:4px}
+.kpi .sub{font-size:11px;margin-top:6px}
+.grid{display:grid;grid-template-columns:1.6fr 1fr;gap:12px;margin-bottom:12px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:13px;min-width:0;margin-bottom:12px;box-shadow:0 3px 12px #25305b0a}
+.panel h2{margin:0 0 10px;font-size:15px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.panel h2 small{font-weight:400;color:var(--muted);font-size:11px}
+.hover{transition:transform .22s,box-shadow .22s}
+.hover:hover,.hover:focus-within{transform:translateY(-4px) scale(1.008);box-shadow:0 16px 30px #26336a24;position:relative;z-index:2}
+.head{display:flex;align-items:center;justify-content:space-between;gap:9px;flex-wrap:wrap;margin-bottom:9px}
+.scroll{overflow:auto;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:660px;font-size:11px}
+th{background:var(--navy);color:#fff;padding:9px 5px;text-align:center}
+th:first-child{text-align:left;min-width:172px}
+td{border-bottom:1px solid #edf0f5;padding:5px;text-align:center}
+td:first-child{text-align:left}
+td input{width:73px;max-width:100%;min-width:45px;border:1px solid #e3e8f2;background:#f8f9fd;border-radius:5px;padding:7px 4px;text-align:center;font-weight:750;color:#202a59}
+td input:focus{background:#fff6cc;outline:2px solid #f5ca29}
+td input.name{width:170px;text-align:left;font-weight:850;background:#fff}
+tr.group td{background:#f3f5fc;font-weight:900;color:var(--navy);padding:9px}
+tr.real td{background:#e9efff;font-weight:900}
+tr.plan td{background:#fff8d6;font-weight:900}
+tr.gap td{font-weight:900}
+.pos{color:#0b9d56}.neg{color:#e04257}
+.chart{width:100%;height:280px}
+.chart svg{width:100%;height:100%}
+.ring{width:145px;height:145px;display:grid;place-items:center;border-radius:50%;margin:14px auto;background:conic-gradient(var(--green) var(--angle,0deg),#e8ebf1 0)}
+.ring:after{content:"";position:absolute;background:#fff;width:114px;height:114px;border-radius:50%}
+.ring strong{position:relative;z-index:1;font-size:25px}
+.sortLayout{display:grid;grid-template-columns:190px 1fr;gap:10px}
+.sortSummary{background:#f8f9fd;border:1px solid #e8eaf1;border-radius:12px;text-align:center;padding:10px}
+.sortSummary p{margin:6px 0;font-weight:750}
+.hcgrid{display:grid;grid-template-columns:repeat(6,minmax(100px,1fr));gap:8px}
+.hcbox{background:#f8f9fd;border:1px solid var(--line);border-radius:10px;padding:9px}
+.hcbox label{display:block;font-size:11px;color:var(--muted);margin-bottom:5px}
+.hcbox input{width:100%;border:0;background:transparent;font-size:19px;font-weight:900;color:var(--navy);outline:0}
+.obs{display:grid;grid-template-columns:120px 180px 1fr 1fr;gap:8px;margin-bottom:8px}
+.obs input,.obs select{border:1px solid var(--line);padding:9px;border-radius:8px;width:100%;min-width:0}
+.hint{font-size:11px;color:#606d94;background:#f0f4ff;padding:9px;border-radius:8px;margin-bottom:10px}
+.foot{color:#8b93aa;text-align:center;font-size:11px;padding:8px}
+@media(max-width:1100px){
+.controls{grid-template-columns:repeat(4,1fr)}
+.grid{grid-template-columns:1fr}
+}
+@media(max-width:650px){
+.shell{padding:8px}
+.brand h1{font-size:16px}
+.logo{font-size:15px;padding:12px}
+.controls{grid-template-columns:repeat(2,minmax(0,1fr))}
+.kpis{grid-template-columns:repeat(2,1fr);gap:7px}
+.kpi{padding:11px;min-height:110px}
+.kpi strong{font-size:25px}
+.sortLayout{grid-template-columns:1fr}
+.hcgrid{grid-template-columns:repeat(2,1fr)}
+.obs{grid-template-columns:1fr 1fr}
+.obs input:nth-child(3),.obs input:nth-child(4){grid-column:span 2}
+}
+@media print{
+body{background:#fff}
+.actions,.tabs,.hidePrint,button{display:none!important}
+.panel{break-inside:avoid;box-shadow:none}
+.hover{transform:none!important}
+.shell{max-width:none}
+}
+</style>
+</head>
+<body>
+<div class="shell">
+<header class="top">
+<div class="brand">
+<div class="logo">SMG19</div>
+<div>
+<h1>HORA A HORA</h1>
+<small>Produtividade operacional • Painel independente</small>
+</div>
+</div>
+<div class="actions">
+<div class="tabs" id="tabs"></div>
+<button class="yellow" onclick="printPanel()">📸 Print</button>
+<button onclick="exportData()">Exportar</button>
+<button onclick="document.getElementById('importFile').click()">Importar</button>
+<input type="file" id="importFile" accept=".json" hidden onchange="importData(event)">
+</div>
+</header>
 
-/* V6 &#8212; Edi&#231;&#227;o direta e vis&#237;vel: cada linha recebe o nome digitado no pr&#243;prio quadro */
-.station-name-input {
-  display:block;width:100%;min-width:148px;max-width:240px;
-  border:1px solid #cdd6eb!important;border-radius:7px;
-  padding:7px 8px!important;background:#fff!important;color:#17255b!important;
-  font-weight:800;font-size:12px;outline:none;box-shadow:0 1px 4px #1b2d6110;
-}
-.station-name-input:hover{border-color:#6b80cf!important;background:#f5f8ff!important}
-.station-name-input:focus{border-color:#3154e9!important;box-shadow:0 0 0 3px #3154e924;background:#fff!important}
-.data td:first-child{min-width:174px}
-.data td input[type=number]{min-width:55px}
-.edit-instruction{font-size:11px;color:#4a5988;background:#f1f5ff;border:1px solid #e0e8fb;border-radius:8px;padding:8px 11px;font-weight:700}
-@media(max-width:650px){.station-name-input{min-width:135px;width:140px}.data td:first-child{min-width:146px}}
-</style></head><body><div class="shell"><div class="topline"><div class="brand"><span class="mark">SMG19</span><span>HORA A HORA<small>Produtividade operacional &#183; painel independente</small></span></div><div class="topactions"><button class="pill active" id="tab-AM" onclick="pick('AM')">AM</button><button class="pill" id="tab-PM" onclick="pick('PM')">PM</button><button class="pill" id="tab-SD" onclick="pick('SD')">SD</button><button class="pill" id="tab-CHP" onclick="pick('CHP')">CHP</button><button class="pill" id="tab-DIA" onclick="pick('DIA')">DIA</button></div></div><div class="inputs"><div class="field"><label>In&#237;cio linha</label><input type="time" id="start" value="22:30" onchange="saveConfig()"></div><div class="field"><label>Hora final</label><input type="time" id="end" value="02:30" onchange="saveConfig()"></div><div class="field"><label>Intervalo (min)</label><input type="number" id="break" min="0" max="300" value="0" onchange="saveConfig()"></div><div class="field"><label>In&#237;cio volumoso</label><input type="time" id="volStart" value="22:30" onchange="saveConfig()"></div><div class="field"><label>&#127919; Meta (vol. planejado)</label><input type="number" id="meta" value="14558" min="0" onchange="saveConfig()"></div><div class="field"><label>&#128230; Roteirizado (sorting)</label><input type="number" id="roteirizado" value="14558" min="0" onchange="saveConfig()"></div><div class="field"><label>&#128197; Data operacional</label><input type="date" id="date" onchange="refresh()"></div><div class="status" id="status">AM &#183; HORA A HORA</div></div><section class="kpis"><div class="kpi purple hover-card"><div class="icon">&#128230;</div><small>Etiquetado</small><div class="big" id="kEti">0</div><span class="tag" id="pEti">0% da meta</span><div class="sub" id="sEti">Meta</div></div><div class="kpi yellow hover-card"><div class="icon">&#127937;</div><small>Fechamento</small><div class="big" id="kFech">0</div><span class="tag" id="pFech">0%</span><div class="sub" id="sFech">Plano</div></div><div class="kpi cyan hover-card"><div class="icon">&#129530;</div><small>Sorting</small><div class="big" id="kSort">0</div><span class="tag" id="pSort">0%</span><div class="sub" id="sSort">Meta</div></div><div class="kpi emerald hover-card"><div class="icon">&#128101;</div><small>HC presente</small><div class="big" id="kHC">0</div><span class="tag" id="pHC">0% abs.</span><div class="sub" id="sHC">Pessoas na opera&#231;&#227;o</div></div></section><div class="grid"><section class="panel hover-card"><div class="panel-head"><div class="panel-title"><span class="ico">&#128230;</span>Etiquetagem hora a hora <small>&#183; detalhamento por esta&#231;&#227;o</small></div><div class="actions"><button onclick="addStation()">+ Esta&#231;&#227;o</button><button onclick="manageStations()">&#9998; Nomes das esta&#231;&#245;es</button><button onclick="clearTurn()">Limpar turno</button><button onclick="window.print()">&#128424; Relat&#243;rio</button></div></div><div class="edit-instruction">&#9999;&#65039; Digite os nomes diretamente na primeira coluna e lance a quantidade de cada hora nas c&#233;lulas ao lado. Os totais s&#227;o calculados automaticamente.</div><div class="tablewrap" id="hourTable"></div></section><section class="panel hover-card"><div class="panel-head"><div class="panel-title"><span class="ico">&#128202;</span>Etiquetagem hora a hora <small>&#183; real x meta</small></div><div class="legend"><b>&#9632;</b> &#8805;100% &nbsp; &#128992; 80&#8211;99% &nbsp; &#128308; &lt;80%</div></div><div class="chart" id="chartEti"></div></section></div><div class="grid"><section class="panel hover-card"><div class="panel-head"><div class="panel-title"><span class="ico">&#128450;&#65039;</span>Aloca&#231;&#227;o / Sorting <small>&#183; pacotes no carrinho &#183; realizado vs meta</small></div><div class="actions"><button onclick="exportJSON()">Exportar</button><button onclick="document.getElementById('upload').click()">Importar</button><input hidden type="file" accept="application/json" id="upload" onchange="importJSON(event)"></div></div><div class="sortcontent"><div class="ringbox"><div class="ring" id="ring" style="--angle:0deg"><strong id="ringVal">0%</strong></div><small>da meta</small><div class="ringstats"><div><small>Realizado</small><b id="sortReal">0</b></div><div><small>Meta</small><b id="sortPlan">0</b></div><div><small>GAP</small><b id="sortGap">0</b></div><div><small>Atingimento</small><b id="sortPct">0%</b></div></div></div><div class="tablewrap" id="sortingTable"></div></div></section><section class="panel hover-card"><div class="panel-head"><div class="panel-title"><span class="ico">&#128200;</span>Sorting hora a hora <small>&#183; real x meta</small></div><div class="legend"><b>&#9632;</b> &#8805;100% &nbsp; &#128992; 80&#8211;99% &nbsp; &#128308; &lt;80%</div></div><div class="chart" id="chartSort"></div></section></div><section class="panel hover-card observations" id="obsPanel">
-<div class="panel-head"><div class="panel-title"><span class="ico">&#128221;</span>Ocorr&#234;ncias / Observa&#231;&#245;es por hora <small>&#183; tipo, descri&#231;&#227;o e tratativa</small></div>
-<div class="actions"><button onclick="addObservation()">+ Observa&#231;&#227;o</button></div></div>
-<div class="tablewrap"><table class="data obs-table" id="obsTable"></table></div>
-</section><section class="panel hover-card"><div class="hc"><div class="hcTitle">&#128101; HC presente <small style="display:block;color:#8992a8;font-size:10px">turno todo</small></div><div class="hcgrid" id="hcGrid"></div></div></section><div class="foot">SMG19 &#183; Painel local independente &#183; Sem Firebase, sem envio de lan&#231;amentos para servidores &#183; Passe o mouse nos cards para destacar</div></div><script>
-const $=id=>document.getElementById(id),n=v=>Number(v)||0,fmt=v=>Math.round(v).toLocaleString('pt-BR'),pct=(a,b)=>b?100*a/b:0,cl=v=>v>=100?'#1cc562':v>=80?'#ff832d':'#ea3b59';let shift='AM';const shifts=['AM','PM','SD','CHP'];const dateToday=()=>{const x=new Date();return [x.getFullYear(),String(x.getMonth()+1).padStart(2,'0'),String(x.getDate()).padStart(2,'0')].join('-')};$('date').value=dateToday();const key=()=>`hh-smg19-v4:${$('date').value}:${shift}`;const dflt=()=>({start:'22:30',end:'02:30',break:0,volStart:'22:30',meta:0,roteirizado:0,stations:['Esta\u{e7}\u{e3}o 1 Linha','Esta\u{e7}\u{e3}o 2 Linha','Esta\u{e7}\u{e3}o 3 Linha','Esta\u{e7}\u{e3}o 4 Linha','Esta\u{e7}\u{e3}o 5 Linha','Esta\u{e7}\u{e3}o 1 Volumoso','Esta\u{e7}\u{e3}o 2 Volumoso','Esta\u{e7}\u{e3}o 3 Volumoso','Esta\u{e7}\u{e3}o 4 Volumoso'],hours:{},sort:{},notes:{}, stationGroup:{}, hc:{needed:0,fixed:0,part:0,temp:0,day:0,just:0,unjust:0}});let state=dflt();function load(){try{state=JSON.parse(localStorage.getItem(key()))||dflt()}catch(e){state=dflt()}for(const id of ['start','end','break','volStart','meta','roteirizado'])$(id).value=state[id]??'';render()}function save(){localStorage.setItem(key(),JSON.stringify(state))}function saveConfig(){for(const id of ['start','end','break','volStart','meta','roteirizado'])state[id]=$(id).value;save();render()}function pick(s){if(s==='DIA'){showDay();return}shift=s;document.querySelectorAll('[id^=tab-]').forEach(x=>x.classList.toggle('active',x.id==='tab-'+s));load()}function refresh(){load()};function mins(t){const [h,m]=(t||'00:00').split(':').map(Number);return h*60+m}function label(t){const h=Math.floor((t%1440+1440)%1440/60),m=(t%60+60)%60;return String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')}function slots(){const st=mins(state.start),en=mins(state.end),span=(en-st+1440)%1440||60;const out=[];for(let x=0;x<Math.min(span,24*60);x+=60)out.push(label(st+x)+'\u{2013}'+label(st+Math.min(x+60,span)));return out}function input(path,i,j){return `<input inputmode="numeric" type="number" min="0" value="${n(state[path]?.[i]?.[j])||''}" placeholder="\u{2013}" aria-label="${i} ${j}" onchange="cell('${path}',${JSON.stringify(i)},${j},this.value)">`}function cell(path,i,j,val){state[path]??={};state[path][i]??={};state[path][i][j]=Math.max(0,n(val));save();render()}function rowNum(path,name,arr){const total=arr.reduce((a,x)=>a+x,0);return `<tr><td><div class="name-cell"><input class="station-name-input" type="text" maxlength="70" aria-label="Nome da esta\u{e7}\u{e3}o ou colaboradores" title="Digite o nome da esta\u{e7}\u{e3}o ou colaboradores" value="${escapeHtml(name)}" onchange="renameStationDirect(${JSON.stringify(name)},this)" placeholder="Nome da esta\u{e7}\u{e3}o / colaborador"></div></td>${arr.map((v,i)=>`<td>${input(path,name,i)}</td>`).join('')}<td><b>${fmt(total)}</b></td><td class="muted">${fmt(total/Math.max(1,slots().length))}</td><td class="share">${total&&state._total? (total/state._total*100).toFixed(1).replace('.',',')+'%':'\u{2013}'}</td></tr>`}function values(path,name,s){return s.map((_,i)=>n(state[path]?.[name]?.[i]))}function sum(a){return a.reduce((x,y)=>x+n(y),0)}function hourTotals(path,s){return s.map((_,i)=>sum(state.stations.map(name=>n(state[path]?.[name]?.[i]))))}function trMetric(name,values,cls=''){return `<tr class="${cls}"><td>${name}</td>${values.map(v=>`<td>${typeof v==='string'?v:fmt(v)}</td>`).join('')}<td>${typeof values._total==='string'?values._total:fmt(values._total||0)}</td><td colspan="2">${values._extra||''}</td></tr>`}function chart(target,data,goal){let max=Math.max(1,...data,goal)*1.22, w=600,h=285,l=40,b=37,top=23,area=h-b-top,barW=Math.min(56,(w-l-20)/Math.max(data.length,1)*.57);let s=`<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" role="img" aria-label="Gr\u{e1}fico de produtividade por hora">`;for(let k=0;k<=4;k++){let y=top+area*k/4;s+=`<line x1="${l}" y1="${y}" x2="${w-10}" y2="${y}" stroke="#e8eaf1"/><text x="${l-6}" y="${y+4}" text-anchor="end" font-size="10" fill="#989fb0">${fmt(max*(1-k/4))}</text>`}data.forEach((v,i)=>{const slotw=(w-l-20)/data.length,x=l+slotw*(i+.5),y=top+area*(1-v/max),ym=top+area*(1-goal/max);s+=`<rect x="${x-barW/2-4}" y="${ym}" width="${barW+8}" height="${Math.max(0,h-b-ym)}" rx="5" fill="#e9eaf1"/><rect x="${x-barW/2}" y="${y}" width="${barW}" height="${Math.max(0,h-b-y)}" rx="5" fill="${cl(pct(v,goal))}"/><text x="${x}" y="${Math.max(13,y-7)}" text-anchor="middle" font-size="12" font-weight="800" fill="#242b55">${fmt(v)}</text><text x="${x}" y="${h-12}" font-size="10" fill="#7f88a4" text-anchor="middle">${slots()[i].replace('\u{2013}','-')}</text>`});s+='</svg>' ;$(target).innerHTML=s}function render(){state.stations=Array.isArray(state.stations)?state.stations:dflt().stations;state.hours=state.hours||{};state.sort=state.sort||{};state.hc=state.hc||{};state.stationGroup=state.stationGroup||{};state.notes=state.notes||{};const s=slots(),count=s.length,goal=n(state.meta)/count;const rows=state.stations.map(name=>values('hours',name,s));const h=s.map((_,i)=>sum(rows.map(r=>r[i])));const total=sum(h);state._total=total;const sort=s.map((_,i)=>n(state.sort?.carrinho?.[i]));const sortT=sum(sort),sortGoal=n(state.roteirizado)/count;const hrG=h.map(v=>Math.round(v-goal)),sortG=sort.map(v=>Math.round(v-sortGoal));let head=`<thead><tr><th>Esta\u{e7}\u{e3}o</th>${s.map(t=>`<th>${t}<div style="font-weight:500;opacity:.65">meta ${fmt(goal)}</div></th>`).join('')}<th>Total</th><th>M\u{e9}dia/h</th><th>Share</th></tr></thead>`;let body='<tbody><tr class="section"><td colspan="'+(s.length+4)+'">\u{25b8} '+groupFor(state.stations[0]||'Esta\u{e7}\u{e3}o 1 Linha')+'</td></tr>';state.stations.forEach((name,i)=>{if(i>0 && groupFor(name)!==groupFor(state.stations[i-1]))body+='<tr class="section"><td colspan="'+(s.length+4)+'">\u{25b8} '+groupFor(name)+'</td></tr>';body+=rowNum('hours',name,rows[i])});const metric=(lab,arr,totalText,extra,css)=>`<tr class="${css}"><td>${lab}</td>${arr.map((v)=>`<td class="${typeof v==='number'&&(v<0)?'neg':''}">${typeof v==='number'?fmt(v):v}</td>`).join('')}<td>${totalText}</td><td colspan="2">${extra}</td></tr>`;body+=metric('\u{2714} Realizado',h,fmt(total),`${fmt(total/count||0)}/h \u{b7} ${pct(total,n(state.meta)).toFixed(1)}%`,'sum')+metric('\u{1f3af} Planejado',s.map(()=>Math.round(goal)),fmt(n(state.meta)),`${fmt(goal)}/h`,'plan')+metric('\u{b1} GAP da hora',hrG,fmt(total-n(state.meta)),'','')+metric('% da hora',h.map(v=>pct(v,goal).toFixed(1)+'%'),pct(total,n(state.meta)).toFixed(1)+'%','','')+metric('\u{3a3} Acumulado',h.map((_,i)=>fmt(sum(h.slice(0,i+1)))),fmt(total),'','')+'</tbody>';$('hourTable').innerHTML=`<table class="data" style="min-width:${Math.max(570,235+s.length*98)}px">${head}${body}</table>`;let sHead=`<thead><tr><th>Sorting</th>${s.map(t=>`<th>${t}</th>`).join('')}<th>Total</th></tr></thead>`;const sRow=(title,arr,total,css)=>`<tr class="${css}"><td>${title}</td>${arr.map(v=>`<td>${typeof v==='string'?v:fmt(v)}</td>`).join('')}<td>${typeof total==='string'?total:fmt(total)}</td></tr>`;let sorter=`<tbody>${sRow('\u{1f4e6} No carrinho',sort.map((_,i)=>`<input type="number" min="0" inputmode="numeric" style="width:70px" placeholder="\u{2013}" value="${sort[i]||''}" onchange="cell('sort','carrinho',${i},this.value)">`),fmt(sortT),'sum')}${sRow('\u{1f3f7}\u{fe0f} Etiquetado',h,total,'')}${sRow('\u{2696}\u{fe0f} Diverg\u{ea}ncia',sort.map((v,i)=>v-h[i]),sortT-total,'')}${sRow('\u{1f3af} Meta/h',s.map(()=>Math.round(sortGoal)),n(state.roteirizado),'plan')}${sRow('\u{b1} GAP da hora',sortG,sortT-n(state.roteirizado),'')}${sRow('% da hora',sort.map(v=>pct(v,sortGoal).toFixed(1)+'%'),pct(sortT,n(state.roteirizado)).toFixed(1)+'%','')}${sRow('\u{3a3} Acumulado',sort.map((_,i)=>sum(sort.slice(0,i+1))),sortT,'')}</tbody>`;$('sortingTable').innerHTML=`<table class="data" style="min-width:${Math.max(510,190+s.length*90)}px">${sHead}${sorter}</table>`;chart('chartEti',h,goal);chart('chartSort',sort,sortGoal);const p=pct(total,n(state.meta)),q=pct(sortT,n(state.roteirizado));$('kEti').textContent=fmt(total);$('kFech').textContent=fmt(total);$('kSort').textContent=fmt(sortT);$('pEti').textContent=p.toFixed(1).replace('.',',')+'% da meta';$('pFech').textContent=p.toFixed(1).replace('.',',')+'% da meta';$('pSort').textContent=q.toFixed(1).replace('.',',')+'% da meta';$('sEti').textContent='meta '+fmt(state.meta)+' \u{b7} '+(total-state.meta>=0?'+':'')+fmt(total-n(state.meta));$('sFech').textContent='ritmo '+fmt(total/count||0)+'/h \u{b7} plano '+fmt(goal)+'/h';$('sSort').textContent='meta '+fmt(state.roteirizado)+' \u{b7} '+(sortT-state.roteirizado>=0?'+':'')+fmt(sortT-n(state.roteirizado));$('ring').style.setProperty('--angle',Math.min(360,q*3.6)+'deg');$('ringVal').textContent=q.toFixed(1)+'%';$('sortReal').textContent=fmt(sortT);$('sortPlan').textContent=fmt(state.roteirizado);$('sortGap').textContent=fmt(sortT-n(state.roteirizado));$('sortPct').textContent=q.toFixed(1)+'%';const hc=state.hc||{},pres=n(hc.fixed)+n(hc.part)+n(hc.temp)+n(hc.day),abs=n(hc.just)+n(hc.unjust),base=pres+abs,absp=pct(abs,base),hcRate=pres?total/pres/count:0;$('kHC').textContent=fmt(pres);$('pHC').textContent='abs. '+absp.toFixed(1)+'%';$('sHC').textContent=`${fmt(abs)} aus\u{ea}ncias \u{b7} ${hcRate.toFixed(1)} pcts/HC/h`;const fields=[['needed','Necess\u{e1}rio'],['fixed','Fixos'],['part','Part time'],['temp','Tempor\u{e1}rios'],['day','Diaristas'],['just','Aus. just.'],['unjust','Aus. injust.']];$('hcGrid').innerHTML=fields.map(([k,lab])=>`<div class="mini"><span>${lab}</span><input aria-label="${lab}" inputmode="numeric" type="number" min="0" style="width:100%;border:0;background:transparent;font-size:18px;font-weight:800;color:#262f73" value="${n(hc[k])}" onchange="updateHC('${k}',this.value)"></div>`).join('')+`<div class="mini emph"><span>Presente</span><strong>${fmt(pres)}</strong></div><div class="mini alert"><span>Aus\u{ea}ncias</span><strong>${fmt(abs)}</strong></div><div class="mini alert"><span>Absent. %</span><strong>${absp.toFixed(1)}%</strong></div><div class="mini emph"><span>Prod. HC/h</span><strong>${hcRate.toFixed(1)}</strong></div>`;$('status').textContent=`Turno ${shift} \u{b7} ${$('date').value.split('-').reverse().join('/')} \u{b7} ${s.length}h`;renderObservations();}
-function updateHC(k,v){state.hc[k]=Math.max(0,n(v));save();render()}function addStation(){const name=prompt('Nome da nova esta\u{e7}\u{e3}o:');if(name&&name.trim()&&!state.stations.includes(name.trim())){const nm=name.trim().slice(0,60);const g=confirm('Esta esta\u{e7}\u{e3}o pertence ao VOLUMOSO?\nOK = Volumoso | Cancelar = Linha/GM');state.stationGroup=state.stationGroup||{};state.stationGroup[nm]=g?'VOLUMOSO':'LINHA / GM';const at=g?state.stations.length:state.stations.findIndex(x=>groupFor(x)==='VOLUMOSO');state.stations.splice(at<0?state.stations.length:at,0,nm);save();render()}}function clearTurn(){if(confirm('Apagar os dados deste turno e data somente neste aparelho?')){state=dflt();save();load()}}function exportJSON(){const out={app:'SMG19 Hora a Hora V4',date:$('date').value,shift,data:state};const url=URL.createObjectURL(new Blob([JSON.stringify(out,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download=`hora-hora-smg19-${shift}-${$('date').value}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}async function importJSON(e){const f=e.target.files[0];if(!f)return;try{const x=JSON.parse(await f.text());if(x.app!=='SMG19 Hora a Hora V4'||!x.data?.stations||!shifts.includes(x.shift))throw Error('Arquivo incompat\u{ed}vel');if(confirm(`Importar dados do turno ${x.shift}, data ${x.date}? Isso substituir\u{e1} os dados dessa combina\u{e7}\u{e3}o neste aparelho.`)){localStorage.setItem(`hh-smg19-v4:${x.date}:${x.shift}`,JSON.stringify(x.data));$('date').value=x.date;pick(x.shift)}}catch(err){alert('Falha na importa\u{e7}\u{e3}o: '+err.message)}e.target.value=''}
-function escapeHtml(v){return String(v??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
-function groupFor(name){return state.stationGroup?.[name] || (/volumoso/i.test(name)?'VOLUMOSO':'LINHA / GM')}
+<div class="controls">
+<div class="field"><label>Data operacional</label><input id="date" type="date" onchange="load()"></div>
+<div class="field"><label>Início linha</label><input id="start" type="time" oninput="updateConfig()"></div>
+<div class="field"><label>Hora final</label><input id="end" type="time" oninput="updateConfig()"></div>
+<div class="field"><label>Intervalo</label><select id="break" onchange="updateConfig()"></select></div>
+<div class="field"><label>Início volumoso</label><input id="volstart" type="time" oninput="updateConfig()"></div>
+<div class="field"><label>Meta (vol. planejado)</label><input id="meta" type="number" min="0" oninput="updateConfig()"></div>
+<div class="field"><label>Roteirizado (sorting)</label><input id="roteir" type="number" min="0" oninput="updateConfig()"></div>
+</div>
 
-function renameStationDirect(oldName, el){
- const index=state.stations.indexOf(oldName);
- if(index<0)return;
- const next=el.value.trim().slice(0,70);
- if(!next || (next!==oldName && state.stations.includes(next))){
-   el.value=oldName;
-   alert(!next?'Informe o nome da esta\u{e7}\u{e3}o ou colaborador.':'J\u{e1} existe uma esta\u{e7}\u{e3}o com esse nome.');
-   return;
- }
- if(next===oldName)return;
- state.stations[index]=next;
- for(const path of ['hours']){
-   if(state[path]?.[oldName]){
-     state[path][next]=state[path][oldName];
-     delete state[path][oldName];
-   }
- }
- state.stationGroup=state.stationGroup||{};
- if(state.stationGroup[oldName]){
-   state.stationGroup[next]=state.stationGroup[oldName];
-   delete state.stationGroup[oldName];
- }
- save();
- render();
-}
+<div class="status" id="status">HORA A HORA • SMG19</div>
 
-function renameStation(oldName){
- const i=state.stations.indexOf(oldName); if(i<0)return;
- const next=prompt('Nome da esta\u{e7}\u{e3}o / colaborador:',oldName);
- if(next===null)return;
- const clean=next.trim().slice(0,70);
- if(!clean){alert('Informe um nome.');return}
- if(clean!==oldName && state.stations.includes(clean)){alert('Esse nome j\u{e1} est\u{e1} cadastrado.');return}
- if(clean!==oldName){
-   state.stations[i]=clean;
-   if(state.hours?.[oldName]){state.hours[clean]=state.hours[oldName];delete state.hours[oldName]}
-   if(state.stationGroup?.[oldName]){state.stationGroup[clean]=state.stationGroup[oldName];delete state.stationGroup[oldName]}
- }
- save();render();
-}
-function manageStations(){
- const msg='Toque no nome ou no l\u{e1}pis ao lado de cada esta\u{e7}\u{e3}o para renomear. Para incluir uma esta\u{e7}\u{e3}o use + Esta\u{e7}\u{e3}o.';
- alert(msg);
-}
-function addObservation(){
- state.notes=state.notes||{};
- const id='extra-'+Date.now();
- state.notes[id]={time:'',type:'Operacional',description:'',action:''};
- save();renderObservations();
-}
-const TYPES=['Operacional','Equipamento','Sistema','RH / Pessoas','Line Haul','Qualidade','Seguran\u{e7}a','Outro'];
-function renderObservations(){
- state.notes=state.notes||{};
- const ss=slots();
- // Ao menos uma linha por hor\u{e1}rio, mesmo antes de incluir ocorr\u{ea}ncias.
- const all=[...ss.map((hour,i)=>({key:'hour-'+i,label:hour})),...Object.keys(state.notes).filter(k=>k.startsWith('extra-')).map(key=>({key,label:'Adicional'}))];
- const head='<thead><tr><th>Hor\u{e1}rio</th><th>Tipo</th><th>Observa\u{e7}\u{e3}o / Descri\u{e7}\u{e3}o</th><th>A\u{e7}\u{e3}o / Tratativa</th><th></th></tr></thead>';
- const body=all.map(({key,label})=>{
-  const d=state.notes[key]||{};
-  const h=key.startsWith('extra-')?`<input type="time" value="${escapeHtml(d.time||'')}" onchange="noteChange('${key}','time',this.value)">`:escapeHtml(label);
-  const opts=TYPES.map(t=>`<option value="${escapeHtml(t)}" ${d.type===t?'selected':''}>${escapeHtml(t)}</option>`).join('');
-  return `<tr><td>${h}</td><td><select aria-label="Tipo ${escapeHtml(label)}" onchange="noteChange('${key}','type',this.value)"><option value="">Selecionar</option>${opts}</select></td><td><input type="text" maxlength="300" placeholder="Registrar ocorr\u{ea}ncia" aria-label="Observa\u{e7}\u{e3}o ${escapeHtml(label)}" value="${escapeHtml(d.description||'')}" onchange="noteChange('${key}','description',this.value)"></td><td><input type="text" maxlength="300" placeholder="A\u{e7}\u{e3}o tomada ou pendente" aria-label="Tratativa ${escapeHtml(label)}" value="${escapeHtml(d.action||'')}" onchange="noteChange('${key}','action',this.value)"></td><td>${key.startsWith('extra-')?`<button class="del" onclick="deleteObservation('${key}')" title="Excluir observa\u{e7}\u{e3}o">\u{2715}</button>`:''}</td></tr>`
- }).join('');
- $('obsTable').innerHTML=head+'<tbody>'+body+'</tbody>';
-}
-function noteChange(key,field,value){
- state.notes=state.notes||{};
- state.notes[key]=state.notes[key]||{};
- state.notes[key][field]=value;
- save();
-}
-function deleteObservation(key){
- if(!confirm('Excluir esta observa\u{e7}\u{e3}o?'))return;
- delete state.notes[key];save();renderObservations();
-}
+<section class="kpis">
+<div class="kpi blue hover">
+<div class="title">📦 Etiquetado</div><strong id="kEti">0</strong>
+<small id="pEti">0% da meta</small><div class="sub" id="sEti">Meta 0</div>
+</div>
+<div class="kpi yellowCard hover">
+<div class="title">🏁 Fechamento</div><strong id="kFech">0</strong>
+<small id="pFech">0% da meta</small><div class="sub" id="sFech">Ritmo 0/h</div>
+</div>
+<div class="kpi cyan hover">
+<div class="title">📦 Sorting</div><strong id="kSort">0</strong>
+<small id="pSort">0% da meta</small><div class="sub" id="sSort">Meta 0</div>
+</div>
+<div class="kpi green hover">
+<div class="title">👥 HC presente</div><strong id="kHC">0</strong>
+<small id="pHC">0% absenteísmo</small><div class="sub" id="sHC">0 pacotes/HC/h</div>
+</div>
+</section>
 
-function showDay(){alert('O consolidado DIA ficar\u{e1} dispon\u{ed}vel quando houver lan\u{e7}amentos dos turnos neste mesmo navegador. Os dados de outros aparelhos precisam ser importados.')};pick('AM');
-</script></body></html>
+<div class="grid">
+<section class="panel hover">
+<div class="head">
+<h2>📦 Etiquetagem hora a hora <small>detalhamento por estação</small></h2>
+<div class="actions hidePrint">
+<button onclick="addStation('linha')">+ Linha</button>
+<button onclick="addStation('volumoso')">+ Volumoso</button>
+<button onclick="clearTurn()">Limpar turno</button>
+</div>
+</div>
+<div class="hint">Digite o nome de cada estação ou colaborador na primeira coluna e a quantidade processada nas células por horário.</div>
+<div class="scroll"><table id="prodTable"></table></div>
+</section>
+
+<section class="panel hover">
+<h2>📊 Etiquetagem hora a hora <small>realizado x meta</small></h2>
+<div class="chart" id="chartEti"></div>
+</section>
+</div>
+
+<div class="grid">
+<section class="panel hover">
+<h2>📦 Alocação / Sorting <small>pacotes no carrinho</small></h2>
+<div class="sortLayout">
+<div class="sortSummary">
+<div class="ring" id="ring"><strong id="ringVal">0%</strong></div>
+<p>Realizado: <span id="sortReal">0</span></p>
+<p>Meta: <span id="sortPlan">0</span></p>
+<p>GAP: <span id="sortGap">0</span></p>
+</div>
+<div class="scroll"><table id="sortTable"></table></div>
+</div>
+</section>
+<section class="panel hover">
+<h2>📈 Sorting hora a hora <small>realizado x meta</small></h2>
+<div class="chart" id="chartSort"></div>
+</section>
+</div>
+
+<section class="panel hover">
+<h2>👥 HC presente <small>gestão operacional</small></h2>
+<div class="hcgrid" id="hcGrid"></div>
+</section>
+
+<section class="panel hover">
+<div class="head">
+<h2>📝 Ocorrências e observações</h2>
+<button onclick="addObs()">+ Observação</button>
+</div>
+<div id="observations"></div>
+</section>
+
+<div class="foot">SMG19 • Dados armazenados localmente no navegador • Sem Firebase</div>
+</div>
+
+<script>
+'use strict';
+
+const $=id=>document.getElementById(id);
+const fmt=v=>Math.round(Number(v)||0).toLocaleString('pt-BR');
+const num=v=>Math.max(0,Number(v)||0);
+const total=a=>a.reduce((s,v)=>s+num(v),0);
+const percent=(a,b)=>b>0?100*a/b:0;
+const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({
+'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+})[c]);
+
+const shifts=['AM','PM','SD','CHP'];
+const defaults={
+AM:['22:30','02:30'],
+PM:['09:00','13:00'],
+SD:['04:00','08:00'],
+CHP:['17:30','21:30']
+};
+
+let shift='AM';
+let state;
+let store={};
+
+const HC_FIELDS=[
+['needed','Necessário'],
+['fixed','Fixos'],
+['part','Part time'],
+['temp','Temporários'],
+['day','Diaristas'],
+['just','Aus. justificada'],
+['unjust','Aus. injustificada']
+];
+
+function localDate(){
+let d=new Date();
+return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-');
+}
+function defaultState(sh){
+return {
+start:defaults[sh][0],
+end:defaults[sh][1],
+volstart:defaults[sh][0],
+breakIndex:-1,
+meta:0,
+roteir:0,
+stations:[
+...Array.from({length:5},(_,i)=>({id:'l'+i,name:'Estação '+(i+1)+' Linha',group:'linha',values:{}})),
+...Array.from({length:4},(_,i)=>({id:'v'+i,name:'Estação '+(i+1)+' Volumoso',group:'volumoso',values:{}}))
+],
+sorting:{},
+hc:{needed:0,fixed:0,part:0,temp:0,day:0,just:0,unjust:0},
+observations:[]
+};
+}
+function storageKey(){
+return 'SMG19_HORAHORA_V71_'+$('date').value;
+}
+function save(){
+store[shift]=state;
+try{localStorage.setItem(storageKey(),JSON.stringify(store))}
+catch(e){console.warn('Armazenamento indisponível',e)}
+}
+function load(){
+try{store=JSON.parse(localStorage.getItem(storageKey())||'{}')}
+catch(e){store={}}
+state=store[shift]||defaultState(shift);
+normalize();
+syncFields();
+renderAll();
+}
+function normalize(){
+if(!Array.isArray(state.stations))state.stations=[];
+if(!state.sorting)state.sorting={};
+if(!state.hc)state.hc=defaultState(shift).hc;
+if(!Array.isArray(state.observations))state.observations=[];
+state.stations.forEach(s=>{
+if(!s.values)s.values={};
+});
+}
+function buildTabs(){
+$('tabs').innerHTML=shifts.map(sh=>
+`<button class="${sh===shift?'active':''}" onclick="selectShift('${sh}')">${sh}</button>`
+).join('');
+}
+function selectShift(sh){
+shift=sh;
+load();
+}
+function minutes(t){
+const [h,m]=String(t||'00:00').split(':').map(Number);
+return (h||0)*60+(m||0);
+}
+function clock(m){
+m=((m%1440)+1440)%1440;
+return String(Math.floor(m/60)).padStart(2,'0')+':'+String(m%60).padStart(2,'0');
+}
+function slots(){
+const start=minutes(state.start),end=minutes(state.end);
+let duration=end-start;
+if(duration<=0)duration+=1440;
+duration=Math.min(24*60,duration);
+const arr=[];
+for(let i=0;i<Math.ceil(duration/60);i++){
+const a=start+i*60;
+const b=Math.min(start+duration,a+60);
+arr.push({i,start:a,end:b,label:clock(a)+'–'+clock(b),weight:(b-a)/60});
+}
+return arr;
+}
+function activeSlots(){
+return slots().filter(x=>x.i!==Number(state.breakIndex));
+}
+function plannedHours(){
+const list=slots();
+const weight=total(activeSlots().map(x=>x.weight));
+return list.map(x=>x.i===Number(state.breakIndex)?0:(weight?num(state.meta)*x.weight/weight:0));
+}
+function plannedSort(){
+const list=slots();
+const weight=total(activeSlots().map(x=>x.weight));
+return list.map(x=>x.i===Number(state.breakIndex)?0:(weight?num(state.roteir)*x.weight/weight:0));
+}
+function syncFields(){
+buildTabs();
+$('start').value=state.start;
+$('end').value=state.end;
+$('volstart').value=state.volstart;
+$('meta').value=state.meta;
+$('roteir').value=state.roteir;
+buildBreak();
+}
+function buildBreak(){
+const list=slots();
+$('break').innerHTML='<option value="-1">Nenhum</option>'+
+list.map(x=>`<option value="${x.i}">${esc(x.label)}</option>`).join('');
+$('break').value=String(state.breakIndex);
+if($('break').value==='')$('break').value='-1';
+}
+function updateConfig(){
+const prevStart=state.start,prevEnd=state.end;
+state.start=$('start').value||'00:00';
+state.end=$('end').value||'01:00';
+state.volstart=$('volstart').value||state.start;
+state.meta=num($('meta').value);
+state.roteir=num($('roteir').value);
+if(prevStart!==state.start||prevEnd!==state.end)buildBreak();
+state.breakIndex=Number($('break').value);
+save();
+renderAll();
+}
+function stationHour(s,i){
+return num(s.values[i]);
+}
+function hourTotals(){
+return slots().map(x=>total(state.stations.map(s=>stationHour(s,x.i))));
+}
+function sortTotals(){
+return slots().map(x=>num(state.sorting[x.i]));
+}
+function metrics(){
+const hours=hourTotals(),sort=sortTotals(),planned=plannedHours(),sortPlan=plannedSort();
+const etiquetado=total(hours);
+const sorting=total(sort);
+const hc=state.hc;
+const present=num(hc.fixed)+num(hc.part)+num(hc.temp)+num(hc.day);
+const absent=num(hc.just)+num(hc.unjust);
+const active=activeSlots().reduce((a,x)=>a+x.weight,0);
+return {hours,sort,planned,sortPlan,etiquetado,sorting,present,absent,active,
+gap:etiquetado-num(state.meta),
+sortGap:sorting-num(state.roteir),
+attain:percent(etiquetado,num(state.meta)),
+sortAttain:percent(sorting,num(state.roteir))
+};
+}
+function setText(id,value){
+if($(id))$(id).textContent=value;
+}
+function renderKPIs(){
+const m=metrics();
+setText('status','Turno '+shift+' • '+$('date').value.split('-').reverse().join('/')+' • '+m.active.toFixed(1)+'h ativas');
+setText('kEti',fmt(m.etiquetado));
+setText('kFech',fmt(m.etiquetado));
+setText('kSort',fmt(m.sorting));
+setText('kHC',fmt(m.present));
+setText('pEti',m.attain.toFixed(1).replace('.',',')+'% da meta');
+setText('pFech',m.attain.toFixed(1).replace('.',',')+'% da meta');
+setText('pSort',m.sortAttain.toFixed(1).replace('.',',')+'% da meta');
+setText('pHC',percent(m.absent,m.present+m.absent).toFixed(1).replace('.',',')+'% absenteísmo');
+setText('sEti','Meta '+fmt(state.meta)+' • GAP '+(m.gap>0?'+':'')+fmt(m.gap));
+setText('sFech','Ritmo '+fmt(m.active?m.etiquetado/m.active:0)+'/h • Plano '+fmt(m.active?state.meta/m.active:0)+'/h');
+setText('sSort','Meta '+fmt(state.roteir)+' • GAP '+(m.sortGap>0?'+':'')+fmt(m.sortGap));
+setText('sHC',(m.active&&m.present?(m.etiquetado/m.present/m.active).toFixed(1):'0')+' pacotes/HC/h');
+setText('ringVal',m.sortAttain.toFixed(1).replace('.',',')+'%');
+$('ring').style.setProperty('--angle',Math.min(360,m.sortAttain*3.6)+'deg');
+setText('sortReal',fmt(m.sorting));
+setText('sortPlan',fmt(state.roteir));
+setText('sortGap',(m.sortGap>0?'+':'')+fmt(m.sortGap));
+}
+function heat(v,p){
+const ratio=percent(v,p);
+return p<=0?'':ratio>=100?'background:#d8f4e4':ratio>=80?'background:#fff0dd':'background:#fde4e7';
+}
+function renderProductivity(){
+const list=slots(),m=metrics();
+const ncols=list.length+4;
+let html='<thead><tr><th>Estação / Nome</th>';
+list.forEach(x=>html+=`<th>${esc(x.label)}<br><small>meta ${fmt(m.planned[x.i])}</small></th>`);
+html+='<th>Total</th><th>Média/h</th><th>Share</th></tr></thead><tbody>';
+for(const group of ['linha','volumoso']){
+html+=`<tr class="group"><td colspan="${ncols}">${group==='linha'?'▸ LINHA / GM':'▸ VOLUMOSO'}</td></tr>`;
+state.stations.forEach((s,idx)=>{
+if(s.group!==group)return;
+const values=list.map(x=>stationHour(s,x.i)),sum=total(values);
+html+=`<tr><td><input class="name" title="Digite o nome da estação ou colaborador" value="${esc(s.name)}" onchange="renameStation(${idx},this.value)"></td>`;
+list.forEach(x=>{
+const v=stationHour(s,x.i);
+html+=`<td style="${heat(v,m.planned[x.i]/Math.max(1,state.stations.length))}"><input type="number" min="0" inputmode="numeric" value="${s.values[x.i]??''}" placeholder="—" oninput="editStation(${idx},${x.i},this.value)"></td>`;
+});
+html+=`<td><b>${fmt(sum)}</b></td><td>${fmt(m.active?sum/m.active:0)}</td><td>${percent(sum,m.etiquetado).toFixed(1)}%</td></tr>`;
+});
+}
+const summary=(label,arr,sumValue,cls)=>{
+html+=`<tr class="${cls}"><td><b>${label}</b></td>`;
+arr.forEach(v=>html+=`<td class="${cls==='gap'?(v>=0?'pos':'neg'):''}">${v>0&&cls==='gap'?'+':''}${fmt(v)}</td>`);
+html+=`<td><b>${sumValue>0&&cls==='gap'?'+':''}${fmt(sumValue)}</b></td><td></td><td></td></tr>`;
+};
+summary('✔ Realizado',m.hours,m.etiquetado,'real');
+summary('🎯 Planejado',m.planned,state.meta,'plan');
+summary('± GAP da hora',m.hours.map((v,i)=>v-m.planned[i]),m.gap,'gap');
+summary('% da hora',m.hours.map((v,i)=>percent(v,m.planned[i])),m.attain,'real');
+html+='</tbody>';
+$('prodTable').innerHTML=html;
+}
+function renameStation(idx,name){
+name=name.trim();
+if(!name)return;
+state.stations[idx].name=name;
+save();renderProductivity();
+}
+function editStation(idx,h,value){
+state.stations[idx].values[h]=value===''?'':num(value);
+save();
+refreshComputed();
+}
+function addStation(group){
+const name=prompt('Nome da estação ou colaborador:');
+if(!name||!name.trim())return;
+state.stations.push({id:String(Date.now()),name:name.trim(),group,values:{}});
+save();renderAll();
+}
+function renderSorting(){
+const list=slots(),m=metrics();
+let html='<thead><tr><th>Sorting</th>';
+list.forEach(x=>html+=`<th>${esc(x.label)}</th>`);
+html+='<th>Total</th></tr></thead><tbody><tr><td>📦 No carrinho</td>';
+list.forEach(x=>html+=`<td><input type="number" min="0" inputmode="numeric" value="${state.sorting[x.i]??''}" placeholder="—" oninput="editSorting(${x.i},this.value)"></td>`);
+html+=`<td><b>${fmt(m.sorting)}</b></td></tr>`;
+for(const [label,arr,totalVal,cls] of [
+['🎯 Meta/h',m.sortPlan,state.roteir,'plan'],
+['± GAP',m.sort.map((v,i)=>v-m.sortPlan[i]),m.sortGap,'gap'],
+['% da hora',m.sort.map((v,i)=>percent(v,m.sortPlan[i])),m.sortAttain,'real'],
+['Σ Acumulado',m.sort.map((_,i)=>total(m.sort.slice(0,i+1))),m.sorting,'real']
+]){
+html+=`<tr class="${cls}"><td>${label}</td>`;
+arr.forEach(v=>html+=`<td>${fmt(v)}</td>`);
+html+=`<td><b>${fmt(totalVal)}</b></td></tr>`;
+}
+$('sortTable').innerHTML=html+'</tbody>';
+}
+function editSorting(h,value){
+state.sorting[h]=value===''?'':num(value);
+save();refreshComputed();
+}
+function makeChart(target,values,plans){
+const max=Math.max(1,...values,...plans)*1.17;
+const w=720,h=270,l=48,r=16,t=25,b=42;
+const cw=w-l-r,ch=h-t-b;
+const n=Math.max(1,values.length);
+const bar=Math.min(65,cw/n*.5);
+const sy=v=>t+ch-v/max*ch;
+let svg=`<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="Gráfico realizado versus meta">`;
+for(let j=0;j<=4;j++){
+const y=t+j*ch/4;
+svg+=`<line x1="${l}" y1="${y}" x2="${w-r}" y2="${y}" stroke="#e4e8f2"/><text x="${l-7}" y="${y+4}" text-anchor="end" font-size="11" fill="#8790a5">${fmt(max*(1-j/4))}</text>`;
+}
+const list=slots();
+values.forEach((v,i)=>{
+const cx=l+cw*(i+.5)/n;
+const p=plans[i]||0;
+const px=cx-bar/2;
+svg+=`<rect x="${px-5}" y="${sy(p)}" width="${bar+10}" height="${t+ch-sy(p)}" rx="5" fill="#e4e6ef"/>`;
+const color=p===0||v>=p?'#20bf61':v>=p*.8?'#fa8030':'#eb4059';
+svg+=`<rect x="${px}" y="${sy(v)}" width="${bar}" height="${Math.max(0,t+ch-sy(v))}" rx="5" fill="${color}"/>`;
+svg+=`<text x="${cx}" y="${Math.max(13,sy(v)-7)}" text-anchor="middle" fill="#252d70" font-size="12" font-weight="bold">${fmt(v)}</text>`;
+svg+=`<text x="${cx}" y="${h-12}" text-anchor="middle" fill="#65708c" font-size="${n>8?9:11}">${esc(list[i]?.label||'')}</text>`;
+});
+$(target).innerHTML=svg+'</svg>';
+}
+function renderCharts(){
+const m=metrics();
+makeChart('chartEti',m.hours,m.planned);
+makeChart('chartSort',m.sort,m.sortPlan);
+}
+function renderHC(){
+$('hcGrid').innerHTML=HC_FIELDS.map(([key,label])=>
+`<div class="hcbox"><label>${label}</label><input type="number" min="0" value="${state.hc[key]??0}" oninput="editHC('${key}',this.value)"></div>`
+).join('');
+const m=metrics();
+$('hcGrid').innerHTML+=`
+<div class="hcbox"><label>Presentes</label><strong>${fmt(m.present)}</strong></div>
+<div class="hcbox"><label>Ausências</label><strong class="neg">${fmt(m.absent)}</strong></div>
+<div class="hcbox"><label>Prod. HC/h</label><strong class="pos">${m.active&&m.present?(m.etiquetado/m.present/m.active).toFixed(1):'0'}</strong></div>`;
+}
+function editHC(key,value){
+state.hc[key]=num(value);save();
+renderKPIs();
+}
+function addObs(){
+state.observations.push({id:Date.now(),time:'',type:'Operacional',desc:'',action:''});
+save();renderObs();
+}
+function editObs(idx,key,value){
+state.observations[idx][key]=value;save();
+}
+function removeObs(idx){
+state.observations.splice(idx,1);save();renderObs();
+}
+function renderObs(){
+$('observations').innerHTML=state.observations.map((o,i)=>`
+<div class="obs">
+<input type="time" value="${esc(o.time)}" onchange="editObs(${i},'time',this.value)">
+<select onchange="editObs(${i},'type',this.value)">
+${['Operacional','Equipamento','Sistema','RH/Pessoas','Line Haul','Qualidade','Segurança','Outro'].map(t=>`<option ${o.type===t?'selected':''}>${t}</option>`).join('')}
+</select>
+<input placeholder="Descrição da ocorrência" value="${esc(o.desc)}" onchange="editObs(${i},'desc',this.value)">
+<input placeholder="Ação / tratativa" value="${esc(o.action)}" onchange="editObs(${i},'action',this.value)">
+<button onclick="removeObs(${i})">Excluir</button>
+</div>`).join('');
+if(!state.observations.length)$('observations').innerHTML='<div class="hint">Nenhuma ocorrência registrada neste turno.</div>';
+}
+function refreshComputed(){
+renderKPIs();
+renderCharts();
+// Atualiza as células calculadas após a digitação sem apagar
+// o valor que está sendo editado.
+const focused=document.activeElement;
+const cursor=focused?.selectionStart;
+const idx=[...document.querySelectorAll('#prodTable input,#sortTable input')].indexOf(focused);
+const inProd=$('prodTable').contains(focused);
+const inSort=$('sortTable').contains(focused);
+if(!inProd&&!inSort){
+renderProductivity();renderSorting();
+}else{
+const table=inProd?'prodTable':'sortTable';
+const copy=focused?.value;
+renderProductivity();renderSorting();
+const inputs=document.querySelectorAll('#'+table+' input');
+if(idx>=0&&inputs[idx]){
+inputs[idx].focus();
+if(copy!=null)inputs[idx].value=copy;
+}
+}
+}
+function renderAll(){
+renderKPIs();
+renderProductivity();
+renderSorting();
+renderCharts();
+renderHC();
+renderObs();
+}
+function clearTurn(){
+if(!confirm('Apagar os lançamentos do turno '+shift+' nesta data?'))return;
+state=defaultState(shift);save();syncFields();renderAll();
+}
+function exportData(){
+save();
+const blob=new Blob([JSON.stringify({
+date:$('date').value,shifts:store
+},null,2)],{type:'application/json'});
+const a=document.createElement('a');
+a.href=URL.createObjectURL(blob);
+a.download='SMG19_HoraHora_'+$('date').value+'.json';
+a.click();URL.revokeObjectURL(a.href);
+}
+async function importData(e){
+const f=e.target.files[0];if(!f)return;
+try{
+const data=JSON.parse(await f.text());
+if(!data.shifts||typeof data.shifts!=='object')throw Error('Arquivo inválido');
+if(!confirm('Importar lançamentos deste arquivo? Os turnos existentes com o mesmo nome serão substituídos.'))return;
+$('date').value=data.date||$('date').value;
+try{store=JSON.parse(localStorage.getItem(storageKey())||'{}')}
+catch(_){store={}}
+Object.assign(store,data.shifts);
+localStorage.setItem(storageKey(),JSON.stringify(store));
+load();alert('Dados importados.');
+}catch(err){alert('Erro ao importar: '+err.message)}
+e.target.value='';
+}
+function printPanel(){
+window.print();
+}
+$('date').value=localDate();
+load();
+</script>
+</body>
+</html>
